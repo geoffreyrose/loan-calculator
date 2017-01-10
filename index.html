@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<title></title>
+	<!-- Only use if site is Responive -->
+	<meta name="viewport" content="initial-scale=1.0, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="description" content="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Fav/Apple Icon -->
+	<link rel="icon" type="image/png" href="favicon.ico" />
+	<link rel="apple-touch-icon-precomposed" type="image/png" href="assets/img/apple-touch-icon.png">
+
+	<!--[if IE]>
+		<script src="assets/js/lib/respond.js"></script>
+		<script src="assets/js/lib/html5.js"></script>
+		<script src="assets/js/lib/rem.min.js"></script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+		<ul class="loans-list">
+			<li class="active">Loan 1</li>
+			<li class="add-loan">+</li>
+		</ul>
+	</header>
+	<main>
+		<section class="row estimate-payments">
+			<div class="small-12 columns">
+				<label>Cost</label>
+				<input maxlength="10" class="dollar-field" name="car-cost" pattern="\d*" type="text" value="10000">
+			</div>
+			<div class="small-12 medium-6 columns">
+				<label>Down Payment</label>
+				<input maxlength="10" class="dollar-field" name="downPayment" pattern="\d*" type="text" value="0">
+			</div>
+			<div class="small-12 medium-6 columns">
+				<label>Trade In</label>
+				<input maxlength="10" class="dollar-field" name="tradeIn" pattern="\d*" type="text" value="0">
+			</div>
+			<div class="small-12 medium-6 columns">
+				<label>Length</label>
+				<select class="term" name="" id="">
+					<option value="12m">12 Months</option>
+					<option value="18m">18 Months</option>
+					<option value="24m">24 Months</option>
+					<option value="30m">30 Months</option>
+					<option value="36m">36 Months</option>
+					<option value="42m">42 Months</option>
+					<option value="48m">48 Months</option>
+					<option value="54m">54 Months</option>
+					<option value="60m" selected>60 Months</option>
+					<option value="66m">66 Months</option>
+					<option value="72m">72 Months</option>
+					<option value="10y">10 Years</option>
+					<option value="15y">15 Years</option>
+					<option value="20y">20 Years</option>
+					<option value="25y">25 Years</option>
+					<option value="30y">30 Years</option>
+				</select>
+			</div>
+			<div class="small-12 medium-6 columns">
+				<label>Interest Rates</label>
+				<input class="rate dollar-field" type="text" value="03.125%" pattern="\d*">
+			</div>
+			<input class="amount hide final-cost" name="cost" pattern="\d*" type="text">
+		</section>
+		<section class="payment-overview">
+			<div class="row column">
+				<div class="monthly-payment cost">
+					<p>Monthly Payment</p>
+					<div class="results"></div>
+				</div>
+				<div class="total-interest cost">
+					<p>Total Interest</p>
+					<div class="results"></div>
+				</div>
+				<div class="total-cost cost">
+					<p>Total Loan Cost</p>
+					<div class="results"></div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<span class="button results">Results <i class="fa fa-angle-up" aria-hidden="true"></i></span>
+	</footer>
+
+	<script src="/assets/lib/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+	<script src="/assets/lib/accruejs/jquery.accrue.min.js"></script>
+	<script src="/assets/js/scripts/general.min.js"></script>
+</body>
+</html>

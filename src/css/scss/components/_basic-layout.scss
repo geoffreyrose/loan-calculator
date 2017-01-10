@@ -1,0 +1,62 @@
+.loans-list {
+	background: $primary-color-tint;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		color: $white;
+		cursor: pointer;
+		display: block;
+		flex: 1 1 auto;
+		padding: .5rem;
+
+		@include single-transition;
+
+		&:hover, &:active, &:focus {
+			background: $primary-color;
+		}
+
+		&.add-loan {
+			flex: 0 0 auto;
+		}
+
+		&.active {
+			background: $primary-color-shade;
+		}
+	}
+}
+
+.payment-overview {
+	background: $white;
+	bottom: -100%;
+	height: 100%;
+	left: 0;
+	padding: 0 0 2.5rem;
+	position: fixed;
+	width: 100%;
+	z-index: 15;
+
+	@include single-transition(all, .25s, linear);
+
+	&.view-results {
+		bottom: 0;
+	}
+}
+
+
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+	padding: 1rem;
+}
