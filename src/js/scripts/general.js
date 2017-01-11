@@ -94,7 +94,9 @@ $(function(){
 
 });
 
-$(function() {
-  $(document).on("touchmove", function(evt) { evt.preventDefault() });
-  $(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
-});
+if (window.navigator.standalone == true) {
+	$(function() {
+		$(document).on("touchmove", function(evt) { evt.preventDefault() });
+		$(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
+	});
+}
