@@ -1,3 +1,11 @@
+.estimate-payments {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
 .loans-list {
 	background: $primary-color-tint;
 	display: flex;
@@ -6,6 +14,7 @@
 	list-style: none;
 
 	li {
+		border-left: 2px solid $primary-color-shade;
 		color: $white;
 		cursor: pointer;
 		display: block;
@@ -18,8 +27,15 @@
 			background: $primary-color;
 		}
 
+		&:first-of-type {
+			border-left: none;
+		}
+
 		&.add-loan {
+
 			flex: 0 0 auto;
+			text-align: center;
+			width: 40px;
 		}
 
 		&.active {
@@ -59,4 +75,9 @@ body {
 main {
 	flex: 1;
 	padding: 1rem;
+}
+
+html, body, .scrollable {
+    overflow: auto;
+    //-webkit-overflow-scrolling: touch;
 }
