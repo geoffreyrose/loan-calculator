@@ -19,8 +19,11 @@
 		cursor: pointer;
 		display: block;
 		flex: 1 1 auto;
+		font-size: .875rem;
 		padding: .5rem;
+		text-transform: uppercase;
 
+		@include heading-font-regular();
 		@include single-transition;
 
 		&:hover, &:active, &:focus {
@@ -32,10 +35,12 @@
 		}
 
 		&.add-loan {
-
+			color: $white;
 			flex: 0 0 auto;
 			text-align: center;
 			width: 40px;
+
+
 		}
 
 		&.active {
@@ -45,11 +50,11 @@
 }
 
 .payment-overview {
-	background: $white;
+	background: $gray-color-tint;
 	bottom: -100%;
 	height: 100%;
 	left: 0;
-	padding: 0 0 2.5rem;
+	padding: 1.5rem 1rem 2.5rem;
 	position: fixed;
 	width: 100%;
 	z-index: 15;
@@ -59,6 +64,80 @@
 	&.view-results {
 		bottom: 0;
 	}
+}
+
+.loan {
+	background: $white;
+	box-shadow: 1px 1px 3px $off-black;
+	padding: 1.25rem .75rem .75rem;
+
+}
+
+.loan-overview {
+	background: $white;
+	box-shadow: 1px 1px 3px $off-black;
+	margin-bottom: 1rem;
+	padding: 1.25rem .75rem .75rem;
+
+	.cost {
+		border-bottom: 1px dotted $gray-color;
+		margin-bottom: .5rem;
+		padding-bottom: .5rem;
+
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+
+		p, .results {
+			margin: 0;
+			padding: 0;
+		}
+
+		p {
+			font-size: 1rem;
+			@include body-font-bold;
+		}
+
+	}
+
+	.payments {
+		cursor: pointer;
+		font-size: .875rem;
+		text-align: center;
+
+		a {
+			&:hover, &:active, &:focus {
+				border-bottom: none;
+			}
+		}
+	}
+
+
+}
+
+.amortization-list {
+	.amortization {
+		background: $white;
+		display: none;
+		left: 0;
+		height: 100%;
+		overflow: auto;
+		padding: 1rem;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1000;
+	}
+}
+
+.loan-title {
+	border-bottom: 2px solid $secondary-color;
+	font-size: 1.25rem;
+	margin: 0 0 .75rem;
+	padding: 0 0 .25rem;
+
+	@include heading-font-regular;
 }
 
 
@@ -73,6 +152,7 @@ body {
 }
 
 main {
+	background: $gray-color-tint;
 	flex: 1;
 	padding: 1rem;
 }

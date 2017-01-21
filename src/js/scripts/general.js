@@ -33,9 +33,25 @@ function calcResults() {
 			response_basic:
 				'$%total_payments%',
 			error_text: "\u2014\u2014\u2014",
+		})
+		.accrue({
+			mode: 'amortization',
+			response_output_div: $('.amortization-list .amortization').eq(loan),
+			error_text: "\u2014\u2014\u2014",
 		});
 
 		loan = loan + 1;
+	});
+
+	$('.amortization-list .amortization table').each(function(){
+		var text = [];
+		$(this).find('thead tr th').each(function(){
+			text.push($(this).text());
+
+			for (var i = 0; i < text.length; i++) {
+				$(this).parents('table').find('tbody tr td:nth-of-type(' + (i + 1) +'), tbody tr th:nth-of-type(' + (i + 1) +')').attr('data-th', text[i]);
+			}
+		});
 	});
 }
 
@@ -73,6 +89,8 @@ $(function(){
 			$('.loans-list li').last().prev().addClass('active');
 			$('.loan-overview').eq(0).clone().insertAfter( $('.loan-overview').last() );
 
+			$('.loan-overview').last().find('.loan-title span').text($('.loan-overview').length);
+
 			cost();
 			calcResults();
 
@@ -84,19 +102,21 @@ $(function(){
 					activeLoan = activeLoan + 1;
 				} else {
 					$('.estimate-payments').removeClass('active').eq(activeLoan).addClass('active');
-
 					return true;
 				}
 			});
 		}
 	});
 
-
+	$('.loan-overview .payments').on('click', function(){
+		var loan = 0;
+		$('.amortization').eq(loan).toggle();
+	});
 });
 
-if (window.navigator.standalone == true) {
-	$(function() {
-		$(document).on("touchmove", function(evt) { evt.preventDefault() });
-		$(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation() });
-	});
-}
+// if (window.navigator.standalone === true) {
+// 	$(function() {
+// 		$(document).on("touchmove", function(evt) { evt.preventDefault(); });
+// 		$(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation(); });
+// 	});
+// }

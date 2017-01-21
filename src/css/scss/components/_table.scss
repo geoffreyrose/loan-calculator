@@ -1,0 +1,138 @@
+table {
+	border-collapse: collapse;
+	display: block;
+	float: left;
+	margin: 0 0 2rem;
+	width: 100%;
+
+	@include breakpoint(large) {
+		display: table;
+		border: none;
+	}
+
+	tbody, th, td, tr, tfoot {
+		display: block;
+	}
+
+	@include breakpoint(large) {
+		th, td {
+			display: table-cell;
+		}
+	}
+	@include breakpoint(large) {
+		tbody,tfoot {
+			display: table-row-group;
+		}
+	}
+
+	tr {
+		border: 1px solid $gray-color;
+		border-radius: $global-radius;
+		border-top: 5px solid $secondary-color;
+		box-shadow: 0px 2px 5px 0px $gray-color;
+		float: left;
+		margin: 0 0 1rem;
+		width: 100%;
+
+		@include breakpoint(large) {
+			border: none;
+			border-bottom: 1px solid #eee;
+			box-shadow: none;
+			display: table-row;
+			float: none;
+			margin: 0;
+
+		}
+	}
+
+	td, th {
+		float: left;
+		padding: .5rem 0;
+		width: 100%;
+
+		&:before {
+			content: attr(data-th);
+			clear: both;
+			display: block;
+			font-size: 1.125rem;
+			float: left;
+			margin: -.5rem .5rem 0 0;
+			padding: .25rem;
+			width: 50%;
+
+			@include heading-font-regular;
+		}
+
+		@include breakpoint(large) {
+			float: none;
+			padding: .75rem 0 0.75rem .25rem;
+			width: auto;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	thead {
+		border-bottom: 3px solid $secondary-color;
+		display: none;
+		th {
+			font-size: 1.25rem;
+			padding: 0.35rem 0 .35rem;
+			text-align: left;
+
+			@include heading-font-regular;
+		}
+
+		@include breakpoint(large) {
+			display: table-header-group;
+		}
+	}
+
+	tbody {
+		border: none;
+		@include breakpoint(large) {
+			border-bottom: 3px solid $secondary-color;
+		}
+		tr {
+			border-bottom: 2px solid #ddd;
+			@include breakpoint(large) {
+				border-bottom: none;
+				&:nth-of-type(even) {
+					background: $gray-color-tint;
+				}
+
+			}
+			td,th {
+				padding: .25rem;
+				text-align: left;
+				@include heading-font-regular;
+				@include breakpoint(large) {
+					padding: .75rem;
+				}
+				a {
+					color: $primary-color;
+					display: inline-block;
+					margin: 0 .5rem 0 0;
+					text-decoration: none;
+
+					&:hover, &:active, &:focus {
+						border: none;
+						color: darken($secondary-color, 10%);
+					}
+				}
+			}
+		}
+	}
+
+	tfoot {
+		td {
+			font-size: 1.25rem;
+			padding: 0.35rem 0 .35rem;
+			text-align: left;
+
+			@include heading-font-regular;
+		}
+	}
+}

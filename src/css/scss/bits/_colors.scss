@@ -11,8 +11,8 @@ $tertiary-color-shade: darken($tertiary-color, 15%);
 $tertiary-color-tint: lighten($tertiary-color, 15%);
 
 $gray-color: #ccc;
-$gray-color-shade: darken($gray-color, 15%);
-$gray-color-tint: lighten($gray-color, 15%);
+$gray-color-shade: darken($gray-color, 10%);
+$gray-color-tint: lighten($gray-color, 10%);
 
 $alert-color: #f04124;
 $success-color: #43AC6A;
@@ -21,7 +21,7 @@ $info-color: #a0d3e8;
 $header-font-color: #ccc;
 $button-color: #27AC27;
 $white: #fff;
-$off-white: #eee;
+$off-white: #f0f0f0;
 $black: #151515;
 $off-black: #999;
 

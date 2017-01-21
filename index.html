@@ -27,7 +27,10 @@
 	<header>
 		<ul class="loans-list">
 			<li class="active">Loan 1</li>
-			<li class="add-loan">+</li>
+			<li class="add-loan">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+
+			</li>
 		</ul>
 	</header>
 	<main>
@@ -76,6 +79,7 @@
 		<section class="payment-overview scrollable">
 			<div class="row">
 				<div class="small-12 medium-6 columns loan-overview">
+					<h3 class="loan-title">Loan <span>1</span></h3>
 					<div class="monthly-payment cost">
 						<p>Monthly Payment</p>
 						<div class="results"></div>
@@ -88,6 +92,9 @@
 						<p>Total Loan Cost</p>
 						<div class="results"></div>
 					</div>
+					<div class="payments">
+						<a>View Payments</a>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -95,7 +102,11 @@
 	<footer>
 		<span class="button results">Results <i class="fa fa-angle-up" aria-hidden="true"></i></span>
 	</footer>
+	<div class="amortization-list">
+		<div class="amortization"></div>
+	</div>
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="assets/lib/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
 	<script src="assets/lib/accruejs/jquery.accrue.min.js"></script>
 	<script src="assets/js/scripts/general.min.js"></script>
