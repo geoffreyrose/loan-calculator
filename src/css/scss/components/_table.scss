@@ -5,7 +5,7 @@ table {
 	margin: 0 0 2rem;
 	width: 100%;
 
-	@include breakpoint(large) {
+	@include breakpoint(small) {
 		display: table;
 		border: none;
 	}
@@ -14,12 +14,12 @@ table {
 		display: block;
 	}
 
-	@include breakpoint(large) {
+	@include breakpoint(small) {
 		th, td {
 			display: table-cell;
 		}
 	}
-	@include breakpoint(large) {
+	@include breakpoint(small) {
 		tbody,tfoot {
 			display: table-row-group;
 		}
@@ -34,7 +34,7 @@ table {
 		margin: 0 0 1rem;
 		width: 100%;
 
-		@include breakpoint(large) {
+		@include breakpoint(small) {
 			border: none;
 			border-bottom: 1px solid #eee;
 			box-shadow: none;
@@ -63,7 +63,7 @@ table {
 			@include heading-font-regular;
 		}
 
-		@include breakpoint(large) {
+		@include breakpoint(small) {
 			float: none;
 			padding: .75rem 0 0.75rem .25rem;
 			width: auto;
@@ -85,19 +85,19 @@ table {
 			@include heading-font-regular;
 		}
 
-		@include breakpoint(large) {
+		@include breakpoint(small) {
 			display: table-header-group;
 		}
 	}
 
 	tbody {
 		border: none;
-		@include breakpoint(large) {
+		@include breakpoint(small) {
 			border-bottom: 3px solid $secondary-color;
 		}
 		tr {
 			border-bottom: 2px solid #ddd;
-			@include breakpoint(large) {
+			@include breakpoint(small) {
 				border-bottom: none;
 				&:nth-of-type(even) {
 					background: $gray-color-tint;
@@ -108,7 +108,7 @@ table {
 				padding: .25rem;
 				text-align: left;
 				@include heading-font-regular;
-				@include breakpoint(large) {
+				@include breakpoint(small) {
 					padding: .75rem;
 				}
 				a {

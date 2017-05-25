@@ -29,7 +29,6 @@
 			<li class="active">Loan 1</li>
 			<li class="add-loan">
 				<i class="fa fa-plus" aria-hidden="true"></i>
-
 			</li>
 		</ul>
 	</header>
@@ -70,8 +69,11 @@
 					</select>
 				</div>
 				<div class="small-12 medium-6 columns">
-					<label>Interest Rates</label>
+					<label>Interest Rate</label>
 					<input class="rate dollar-field" type="text" value="03.125%" pattern="\d*">
+				</div>
+				<div class="columns text-center remove-loan">
+					<span><i class="fa fa-times" aria-hidden="true"></i> Remove Loan</span>
 				</div>
 				<input class="amount hide final-cost cost" pattern="\d*" type="text">
 			</div>
@@ -92,9 +94,9 @@
 						<p>Total Loan Cost</p>
 						<div class="results"></div>
 					</div>
-					<div class="payments">
+					<!-- <div class="payments">
 						<a>View Payments</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
@@ -107,6 +109,7 @@
 	</div>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
 	<script src="assets/lib/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
 	<script src="assets/lib/accruejs/jquery.accrue.min.js"></script>
 	<script src="assets/js/scripts/general.min.js"></script>

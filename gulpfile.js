@@ -120,7 +120,7 @@ gulp.task('bower-files', ['pre-bower-files'],  function() {
 
 gulp.task('watch', function() {
   browserSync.init({
-    proxy: "http://loan-calculator.dev" //change to project's local url
+    proxy: "http://loan.app/" //change to project's local url
   });
 
   //files/folders to watch

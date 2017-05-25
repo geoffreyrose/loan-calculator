@@ -88,7 +88,6 @@ $(function(){
 			$('<li>Loan ' +  ($('.loans-list li').length) + '</li>').insertBefore( $('.loans-list li').last() );
 			$('.loans-list li').last().prev().addClass('active');
 			$('.loan-overview').eq(0).clone().insertAfter( $('.loan-overview').last() );
-
 			$('.loan-overview').last().find('.loan-title span').text($('.loan-overview').length);
 
 			cost();
@@ -96,8 +95,8 @@ $(function(){
 
 		} else {
 			$(this).addClass('active');
-			var activeLoan = 0;
-			$('.loans-list li').each(function(){
+			var activeLoan = 0
+			$('.loans-list li').each(function() {
 				if( !$(this).hasClass('active') ) {
 					activeLoan = activeLoan + 1;
 				} else {
@@ -106,17 +105,39 @@ $(function(){
 				}
 			});
 		}
+
+		if( $('.loans-list li').length > 4 ) {
+			$('.loans-list .add-loan').hide();
+		}
 	});
 
-	$('.loan-overview .payments').on('click', function(){
+	$('.loan').on('click', '.remove-loan span', function() {
+		$('input').focus();
+		$('.loans-list li.active').prev().addClass('active').next().remove();
+		$(this).parents('.estimate-payments').prev().addClass('active').next().remove();
+
+		var activeLoan = 0;
+		$('.loans-list li').each(function() {
+			if( !$(this).hasClass('active') ) {
+				activeLoan = activeLoan + 1;
+			} else {
+				$('.loan-overview').eq(activeLoan+1).remove();
+				return true;
+			}
+		});
+
+		var x = 0;
+		$('.loan .estimate-payments').each(function() {
+			$('.loans-list li').eq(x).text('Loan ' + (x+1));
+			$('.payment-overview .loan-overview').eq(x).find('.loan-title span').text(x+1);
+			x++;
+		});
+
+		$('.loans-list .add-loan').show();
+	})
+
+	$('.loan-overview .payments').on('click', function() {
 		var loan = 0;
 		$('.amortization').eq(loan).toggle();
 	});
 });
-
-// if (window.navigator.standalone === true) {
-// 	$(function() {
-// 		$(document).on("touchmove", function(evt) { evt.preventDefault(); });
-// 		$(document).on("touchmove", ".scrollable", function(evt) { evt.stopPropagation(); });
-// 	});
-// }
