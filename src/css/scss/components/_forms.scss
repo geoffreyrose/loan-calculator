@@ -9,7 +9,7 @@
 	width: 100%;
 
 	@include single-transition;
-
+	@include heading-font-bold;
 	i {
 		@include single-transition;
 	}
@@ -28,7 +28,7 @@
 input,select,textarea {
 	background: $off-white;
 	//border: 1px solid $gray-color-shade;
-	box-shadow: inset 1px -1px 5px 0px $gray-color-shade;
+	box-shadow: inset 0px 1px 5px 0px $gray-color-shade;
 	border: none;
 	border-radius: $global-radius;
 	font-size: 1rem;
@@ -40,7 +40,7 @@ input,select,textarea {
 	@include single-transition(box-shadow);
 
 	&:active,&:focus {
-		box-shadow: inset 1px -1px 2px 1px $tertiary-color;
+		box-shadow: inset 0px 1px 2px 1px $tertiary-color;
 		//border: 1px solid $tertiary-color;
 		outline: none;
 	}
@@ -52,6 +52,7 @@ input, textarea {
 
 select {
 	height: 2em;
+	padding: 0 .25rem;
 }
 
 label {
@@ -62,5 +63,5 @@ label {
 	text-transform: uppercase;
 	width: 100%;
 
-	@include heading-font-bold();
+	@include heading-font-bold;
 }
